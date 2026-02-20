@@ -1,11 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import { redirect } from "next/navigation";
-export default function Home() {
-  redirect("/fetching");
+import React from "react";
+import Wrapper from "./components/wrapper";
+import Counter from "./components/Counter";
+import CounterProvider from "./components/CounterProvider";
+
+const page = () => {
   return (
     <div>
-      <h1>Welcome to nect js app</h1>
+      {/* <Wrapper /> */}
+      <CounterProvider>
+        <Counter />
+        <Counter />
+      </CounterProvider>
     </div>
   );
-}
+};
+
+export default page;
